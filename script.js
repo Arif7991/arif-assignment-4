@@ -93,7 +93,7 @@ const emptyState = document.getElementById("emptyState");
 function renderJobs() {
   jobContainer.innerHTML = "";
 
-  const filteredJobs = jobs.filter(job => 
+  const filteredJobs = jobs.filter(job =>
     currentTab === "all" ? true : job.status === currentTab
   );
 
@@ -106,26 +106,44 @@ function renderJobs() {
   }
 
   filteredJobs.forEach(job => {
+
+    let statusBadge = "";
+
+    if (job.status === "interview") {
+      statusBadge = `<span class="badge badge-success mb-2">Interview</span>`;
+    } else if (job.status === "rejected") {
+      statusBadge = `<span class="badge badge-error mb-2">Rejected</span>`;
+    }
+
     const div = document.createElement("div");
     div.className = "card bg-base-100 shadow p-4";
 
     div.innerHTML = `
       <div class="flex justify-between">
         <div>
-          <h3 class="font-bold">${job.company}</h3>
-          <p>${job.position}</p>
+          <h3 class="font-bold text-lg">${job.company}</h3>
+          <p class="font-semibold">${job.position}</p>
           <p class="text-sm text-gray-500">${job.location} • ${job.type} • ${job.salary}</p>
+          
+          ${statusBadge}
+
           <p class="mt-2">${job.description}</p>
         </div>
-        <button onclick="deleteJob(${job.id})" class="btn btn-sm btn-error">Delete</button>
+
+        <button onclick="deleteJob(${job.id})" 
+        class="btn btn-sm btn-circle btn-error">✕</button>
       </div>
 
       <div class="mt-4 flex gap-2">
         <button onclick="setStatus(${job.id}, 'interview')" 
-        class="btn btn-sm btn-success">Interview</button>
+        class="btn btn-sm ${job.status === 'interview' ? 'btn-success' : 'btn-outline btn-success'}">
+          Interview
+        </button>
 
         <button onclick="setStatus(${job.id}, 'rejected')" 
-        class="btn btn-sm btn-outline btn-error">Rejected</button>
+        class="btn btn-sm ${job.status === 'rejected' ? 'btn-error' : 'btn-outline btn-error'}">
+          Rejected
+        </button>
       </div>
     `;
 
