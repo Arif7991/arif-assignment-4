@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CareerFlow - Job Tracker</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 p-6">
+
+  <h1 class="text-3xl font-bold mb-6">CareerFlow - Job Tracker</h1>
+
+  <!-- Dashboard Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+    <div class="card bg-base-100 shadow p-4">
+      <h3>Total</h3>
+      <p id="totalCount" class="text-2xl font-bold">0</p>
+    </div>
+    <div class="card bg-base-100 shadow p-4">
+      <h3>Interview</h3>
+      <p id="interviewCount" class="text-2xl font-bold text-green-600">0</p>
+    </div>
+    <div class="card bg-base-100 shadow p-4">
+      <h3>Rejected</h3>
+      <p id="rejectedCount" class="text-2xl font-bold text-red-600">0</p>
+    </div>
+  </div>
+
+  <!-- Available Jobs Section -->
+  <div class="bg-white p-6 rounded shadow">
+    
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl font-bold">Available Jobs</h2>
+      <span id="sectionCount" class="font-semibold">0 Jobs</span>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs tabs-boxed mb-6">
+      <button class="tab tab-active" data-tab="all">All</button>
+      <button class="tab" data-tab="interview">Interview</button>
+      <button class="tab" data-tab="rejected">Rejected</button>
+    </div>
+
+    <!-- Jobs Container -->
+    <div id="jobContainer" class="space-y-4"></div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="hidden text-center py-10">
+      <div class="text-5xl mb-3">📄</div>
+      <h3 class="text-lg font-bold">No jobs available</h3>
+      <p class="text-gray-500">Check back later for new opportunities</p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
