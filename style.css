@@ -1,4 +1,7 @@
 /* Optional small custom styles */
+*{
+  font-family: "Geist", sans-serif;
+}
 
 .card {
   transition: 0.3s ease;
