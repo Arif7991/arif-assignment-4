@@ -110,9 +110,9 @@ function renderJobs() {
     let statusBadge = "";
 
     if (job.status === "interview") {
-      statusBadge = `<span class="badge badge-success mb-2">Interview</span>`;
+      statusBadge = `<span class="badge badge-outline badge-success mb-2">Interview</span>`;
     } else if (job.status === "rejected") {
-      statusBadge = `<span class="badge badge-error mb-2">Rejected</span>`;
+      statusBadge = `<span class="badge badge-outline badge-error mb-2">Rejected</span>`;
     }
 
     const div = document.createElement("div");
@@ -136,7 +136,7 @@ function renderJobs() {
 
       <div class="mt-4 flex gap-2">
         <button onclick="setStatus(${job.id}, 'interview')" 
-        class="btn btn-sm ${job.status === 'interview' ? 'btn-success' : 'btn-outline btn-success'}">
+        class="btn btn-white btn-sm ${job.status === 'interview' ? 'btn-success' : 'btn-outline btn-success'}">
           Interview
         </button>
 
