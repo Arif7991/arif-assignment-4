@@ -5,17 +5,17 @@ const jobs = [
     position: "React Native Developer",
     location: "Remote",
     type: "Full-time",
-    salary: "$70,000 - $85,000",
-    description: "Build scalable cross-platform mobile applications.",
+    salary: "$130,000 - $175,000",
+    description: "Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.",
     status: "all"
   },
   {
     id: 2,
     company: "WebFlow Agency",
-    position: "Frontend Developer",
+    position: "Web Designer & Developer",
     location: "Los Angeles, CA",
     type: "Part-time",
-    salary: "$60,000 - $75,000",
+    salary: "$80,000 - $120,000",
     description: "Develop responsive web interfaces using modern tools.",
     status: "all"
   },
@@ -110,9 +110,9 @@ function renderJobs() {
     let statusBadge = "";
 
     if (job.status === "interview") {
-      statusBadge = `<span class="badge badge-outline badge-success mb-2">Interview</span>`;
+      statusBadge = `<span class="badge badge-outline badge-success mb-2 font-semi-bold">INTERWIEWED</span>`;
     } else if (job.status === "rejected") {
-      statusBadge = `<span class="badge badge-outline badge-error mb-2">Rejected</span>`;
+      statusBadge = `<span class="badge badge-outline badge-error mb-2 text-semi-bold">REJECTED</span>`;
     }
 
     const div = document.createElement("div");
@@ -120,14 +120,14 @@ function renderJobs() {
 
     div.innerHTML = `
       <div class="flex justify-between">
-        <div>
-          <h3 class="font-bold text-lg">${job.company}</h3>
-          <p class="font-semibold">${job.position}</p>
-          <p class="text-sm text-gray-500">${job.location} • ${job.type} • ${job.salary}</p>
+        <div class="">
+          <h3 class="font-bold text-lg mb-lg">${job.company}</h3>
+          <p class="text-sm text-gray-500">${job.position}</p>
+          <p class="text-sm text-gray-500 my-4">${job.location} • ${job.type} • ${job.salary}</p>
           
           ${statusBadge}
 
-          <p class="mt-2">${job.description}</p>
+          <p class="mt-2 text-gray-500">${job.description}</p>
         </div>
 
         <button onclick="deleteJob(${job.id})" 
@@ -137,12 +137,12 @@ function renderJobs() {
       <div class="mt-4 flex gap-2">
         <button onclick="setStatus(${job.id}, 'interview')" 
         class="btn btn-white btn-sm ${job.status === 'interview' ? 'btn-success' : 'btn-outline btn-success'}">
-          Interview
+          INTERWIEW
         </button>
 
         <button onclick="setStatus(${job.id}, 'rejected')" 
         class="btn btn-sm ${job.status === 'rejected' ? 'btn-error' : 'btn-outline btn-error'}">
-          Rejected
+          REJECTED
         </button>
       </div>
     `;

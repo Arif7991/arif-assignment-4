@@ -1,54 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Job Application Tracker</title>
 
-  <!-- font  -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
- <!-- icon -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
-  <!-- Tailwind -->
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- DaisyUI -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
 
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-gray-100 p-6">
 
-  <h1 class="text-3xl font-bold mb-6">Job Application Tracker</h1>
+  <!-- Page Title -->
+  <h1 class="text-3xl font-bold mb-6">
+    Job Application Tracker
+  </h1>
 
   <!-- Dashboard Cards -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+
+    <!-- Total -->
     <div class="card bg-base-100 shadow p-4">
       <h3>Total</h3>
       <p id="totalCount" class="text-2xl font-bold">0</p>
     </div>
+
+    <!-- Interview -->
     <div class="card bg-base-100 shadow p-4">
       <h3>Interview</h3>
       <p id="interviewCount" class="text-2xl font-bold text-green-600">0</p>
     </div>
+
+    <!-- Rejected -->
     <div class="card bg-base-100 shadow p-4">
       <h3>Rejected</h3>
       <p id="rejectedCount" class="text-2xl font-bold text-red-600">0</p>
     </div>
+
   </div>
 
   <!-- Available Jobs Section -->
-  <div class=" p-6 rounded shadow">
-    
+  <div class="p-6 rounded shadow">
+
+    <!-- Section Header -->
     <div class="flex justify-between items-center mb-4">
       <h2 class="text-xl font-bold">Available Jobs</h2>
       <span id="sectionCount" class="font-semibold">0 Jobs</span>
     </div>
 
     <!-- Tabs -->
-    <div class="tabs tabs-boxed  inline-flex w-auto mb-6">
+    <div class="tabs tabs-boxed inline-flex w-auto mb-6">
       <button class="tab tab-active" data-tab="all">All</button>
       <button class="tab" data-tab="interview">Interview</button>
       <button class="tab" data-tab="rejected">Rejected</button>
@@ -61,11 +79,15 @@
     <div id="emptyState" class="hidden text-center py-10">
       <div class="text-5xl mb-3">📄</div>
       <h3 class="text-lg font-bold">No jobs available</h3>
-      <p class="text-gray-500">Check back later for new opportunities</p>
+      <p class="text-gray-500">
+        Check back later for new opportunities
+      </p>
     </div>
 
   </div>
 
+  <!-- JavaScript -->
   <script src="script.js"></script>
+
 </body>
 </html>
