@@ -131,7 +131,7 @@ function renderJobs() {
         </div>
 
         <button onclick="deleteJob(${job.id})" 
-        class="btn btn-sm btn-circle btn-error">✕</button>
+        class="btn btn-sm btn-circle btn-error"><i class="fa fa-trash text-white" aria-hidden="true"></i></button>
       </div>
 
       <div class="mt-4 flex gap-2">
