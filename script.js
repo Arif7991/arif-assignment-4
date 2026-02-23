@@ -16,7 +16,7 @@ const jobs = [
     location: "Los Angeles, CA",
     type: "Part-time",
     salary: "$80,000 - $120,000",
-    description: "Develop responsive web interfaces using modern tools.",
+    description: "Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.",
     status: "all"
   },
   {
@@ -26,7 +26,7 @@ const jobs = [
     location: "Boston, MA",
     type: "Full-time",
     salary: "$80,000 - $95,000",
-    description: "Analyze and visualize business data effectively.",
+    description: "Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking",
     status: "all"
   },
   {
@@ -35,48 +35,48 @@ const jobs = [
     position: "Backend Developer",
     location: "Seattle, WA",
     type: "Full-time",
-    salary: "$90,000 - $110,000",
-    description: "Build and maintain scalable backend systems.",
+    salary: "$190,000 - $140,000",
+    description: "Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.",
     status: "all"
   },
   {
     id: 5,
-    company: "DesignPro Studio",
+    company: "Innovation Labs",
     position: "UI/UX Designer",
-    location: "Remote",
-    type: "Contract",
-    salary: "$50,000 - $65,000",
-    description: "Design modern and user-friendly interfaces.",
+    location: "Austin, TX",
+    type: "Full-time",
+    salary: "$150,000 - $110,000",
+    description: "Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.",
     status: "all"
   },
   {
     id: 6,
-    company: "CyberTech",
-    position: "Security Engineer",
+    company: "MegaCorp Solutions",
+    position: "JavaScript Developer",
     location: "New York, NY",
     type: "Full-time",
-    salary: "$100,000 - $120,000",
-    description: "Ensure system security and prevent cyber threats.",
+    salary: "$130,000 - $170,000",
+    description: "Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.",
     status: "all"
   },
   {
     id: 7,
-    company: "AI Labs",
-    position: "Machine Learning Engineer",
-    location: "Austin, TX",
+    company: "StartupXYZ",
+    position: "Full Stack Engineer",
+    location: "Remote",
     type: "Full-time",
-    salary: "$110,000 - $130,000",
+    salary: "$120,000 - $160,000",
     description: "Develop intelligent machine learning models.",
     status: "all"
   },
   {
     id: 8,
-    company: "Startup Hub",
-    position: "Full Stack Developer",
+    company: "TechCorp Industries",
+    position: "Senior Frontend Developer",
     location: "San Francisco, CA",
     type: "Full-time",
-    salary: "$95,000 - $115,000",
-    description: "Work on both frontend and backend technologies.",
+    salary: "$130,000 - $175,000",
+    description: "We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.",
     status: "all"
   }
 ];
@@ -110,13 +110,13 @@ function renderJobs() {
     let statusBadge = "";
 
     if (job.status === "interview") {
-      statusBadge = `<span class="badge badge-outline badge-success mb-2 font-semi-bold">INTERWIEWED</span>`;
+      statusBadge = `<span class="badge badge-outline badge-success mb-2 font-semibold">INTERWIEWED</span>`;
     } else if (job.status === "rejected") {
-      statusBadge = `<span class="badge badge-outline badge-error mb-2 text-semi-bold">REJECTED</span>`;
+      statusBadge = `<span class="badge badge-outline badge-error mb-2 text-semibold">REJECTED</span>`;
     }
 
     const div = document.createElement("div");
-    div.className = "card bg-base-100 shadow p-4";
+    div.className = "card card-2 bg-base-100 shadow px-4 py-8";
 
     div.innerHTML = `
       <div class="flex justify-between">

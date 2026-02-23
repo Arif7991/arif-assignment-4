@@ -7,7 +7,7 @@
   transition: 0.5s ease;
 }
 
-.card:hover {
+.card-2:hover {
   transform: scale(1.01);
   border-left: 2px solid green;
 }
