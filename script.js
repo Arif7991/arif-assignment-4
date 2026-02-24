@@ -97,7 +97,13 @@ function renderJobs() {
     currentTab === "all" ? true : job.status === currentTab
   );
 
-  sectionCount.innerText = filteredJobs.length + " Jobs";
+  const totalJobs = jobs.length;
+
+if (currentTab === "all") {
+  sectionCount.innerText = totalJobs + " Jobs";
+} else {
+  sectionCount.innerText = filteredJobs.length + " of " + totalJobs + " Jobs";
+}
 
   if (filteredJobs.length === 0) {
     emptyState.classList.remove("hidden");
